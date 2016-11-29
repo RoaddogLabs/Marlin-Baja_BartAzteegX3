@@ -1,57 +1,50 @@
-# Marlin 3D Printer Firmware
-<img align="right" src="Documentation/Logo/Marlin%20Logo%20GitHub.png" />
+### Roaddog Labs Baja/Bart Marlin Firmware for AzteegX3 Controller
+### 
+### ### ### ### 
+### ### ### ### ### ### ### ### ### ### 
+This fork is configured specifically for the Roaddog Labs Baja or Bart
+with an AzteegX3 controller.  It's based on Marlin 1.0.2-2 that was
+pushed 06 Nov, 2016.
 
- Additional documentation can be found in [our wiki](https://github.com/MarlinFirmware/Marlin/wiki/Main-Page).
+Details and specs for the AzteegX3 are at
+http://reprap.org/wiki/Azteeg_X3
 
-## Release Branch
+__What This Does__
 
-The Release branch contains the latest tagged version of Marlin (currently 1.0.2-2 – October 2016). It also includes a version 1.0.1 (December 2014). Any version of Marlin before 1.0.1 (when we started tagging versions) can be collectively referred to as Marlin 1.0.0.
+The settings are preconfigured for the stock configuration as shipped
+from Roaddog Labs for both Baja and Bart.  If you are familiar with
+hacking Marlin I've just changed the board type from RAMPS to AzteegX3
+(board def 67).  The other settings are direct ports from a stock Baja
+or Bart with the exception of SD and display configs.  There is no
+support for SD storage or external displays in this build.  This build supports reliable connections to the board at 250000 baud.
 
-## Patches - 1.0.x Branch
 
-Any patches developed for this family of releases will be found on the [1.0.x branch](https://github.com/MarlinFirmware/Marlin/tree/1.0.x) of this repository.
+__How to Build__
 
-## This Repository is Not For Feature Development
+Windows platforms need the USB VCP Drivers.  The Azteeg X3 uses the
+newer FT231x USB to UART chip and it needs the updated VCP(virtual com
+port) drivers from
+[http://www.ftdichip.com/Drivers/VCP.htm](http://www.ftdichip.com/
+Drivers/VCP.htm) . Download the correct version for your operating
+system or you can get the executable version for Windows(easier).
+Windows may try to do an update to locate the proper drivers but it is
+recommended to install the FTDI drivers for better performance. The VCP
+drivers will install a COM port on your computer for the Azteeg X3.  You
+can check what port number was assigned by going to your device manager
+and click on Ports(COM & LPT) look for something that says "USB Serial
+Port(COM3)" where COM3 is you assigned port number(this will vary from
+PC to PC). Remember this number as you will be using it later in
+configuring other software.
 
-Development of future versions of Marlin is ongoing. However, to keep issues separate, that effort takes place in a companion [Development Repository](https://github.com/MarlinFirmware/MarlinDev/). Please make all suggestions for future features in that project. Issues raised here should be restricted to errors in the tagged releases.
+On Mac and Linux the drivers should already be installed.  If not get a
+driver from
+[http://www.ftdichip.com/Drivers/VCP.htm](http://www.ftdichip.com/
+Drivers/VCP.htm)
 
-## Current Status: In Development
+To build the firmare we use Arduino 1.6.7 IDE though any newer version should work.  We recommend not using any Arduino IDE version prior to 1.6.4 as we've had issues with newer Marlin dists not building properly on earlier IDE versions.
 
-Marlin development is being accelerated to catch up with a long list of issues. Check the Issues and Pull Requests links on the right to to see what we are currently working on.
 
-[![Coverity Scan Build Status](https://scan.coverity.com/projects/2224/badge.svg)](https://scan.coverity.com/projects/2224)
-[![Travis Build Status](https://travis-ci.org/MarlinFirmware/Marlin.svg)](https://travis-ci.org/MarlinFirmware/Marlin)
 
-##### [RepRap.org Wiki Page](http://reprap.org/wiki/Marlin)
 
-## Credits
 
-The current Marlin dev team consists of:
-
- - Scott Lahteine [@thinkyhead] - English
- - Roxanne Neufeld [@Roxy-3DPrintBoard] - English
- - Andreas Hardtung [@AnHardt] - Deutsch, English
- - [@Wurstnase] - Deutsch, English
- - [@fmalpartida] - English, Spanish
- - [@CONSULitAS] - Deutsch, English
- - [@maverikou]
- - Chris Palmer [@nophead]
- - [@paclema]
- - [@epatel]
- - Erik van der Zalm [@ErikZalm]
- - David Braam [@daid]
- - Bernhard Kubicek [@bkubicek]
-
-More features have been added by:
-  - Alberto Cotronei [@MagoKimbra]
-  - Lampmaker,
-  - Bradley Feldman,
-  - and others...
-
-## License
-
-Marlin is published under the [GPL license](/COPYING.md) because we believe in open development. The GPL comes with both rights and obligations. Whether you use Marlin firmware as the driver for your open or closed-source product, you must keep Marlin open, and you must provide your compatible Marlin source code to end users upon request. The most straightforward way to comply with the Marlin license is to make a fork of Marlin on Github, perform your modifications, and direct users to your modified fork.
-
-While we can't prevent the use of this code in products (3D printers, CNC, etc.) that are closed source or crippled by a patent, we would prefer that you choose another firmware or, better yet, make your own.
-
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=ErikZalm&url=https://github.com/MarlinFirmware/Marlin&title=Marlin&language=&tags=github&category=software)
+The [original README.md](Orig_README.md) from the fork.
