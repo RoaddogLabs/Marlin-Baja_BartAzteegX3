@@ -1,7 +1,6 @@
 ### Roaddog Labs Baja/Bart Marlin Firmware for AzteegX3 Controller
 ### 
-### ### ### ### 
-### ### ### ### ### ### ### ### ### ### 
+
 This fork is configured specifically for the Roaddog Labs Baja or Bart
 with an AzteegX3 controller.  It's based on Marlin 1.0.2-2 that was
 pushed 06 Nov, 2016.
